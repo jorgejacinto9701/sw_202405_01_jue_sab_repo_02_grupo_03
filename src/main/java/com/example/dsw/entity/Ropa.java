@@ -15,6 +15,8 @@ public class Ropa {
 
     @Id
     private ObjectId _id;
+    
+    @Field(name = "id")
     private Integer productId;
     private String title;
     private Double price;
