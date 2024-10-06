@@ -1,0 +1,5 @@
+1. Servicio REST con dos campos para el filtro
+http://localhost:8095/url/ropa/listaPorIDProducto_o_Precio/1/109
+
+2. Servicio REST con función de eliminación (Investigción)
+http://localhost:8095/url/ropa/eliminarRopaByIDProducto/1

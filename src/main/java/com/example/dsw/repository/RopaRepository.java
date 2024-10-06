@@ -10,7 +10,9 @@ import com.example.dsw.entity.Ropa;
 
 public interface RopaRepository  extends MongoRepository<Ropa, ObjectId> {
 
-    
+    @Query(value = "{ 'id': ?0 }", delete = true)
+    void eliminarRopaByIDProducto(Integer id);
+
 	@Query("{ $or: [{id: ?0}, {price: ?1}] }")    
 	public List<Ropa> listaPorIDProductooPrecio(Integer id, double price);
 }

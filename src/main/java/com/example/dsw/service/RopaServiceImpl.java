@@ -20,5 +20,9 @@ public class RopaServiceImpl implements RopaService {
 		return ropaRepository.listaPorIDProductooPrecio(id,price);
 }
 
+@Override
+public void eliminarRopaByIDProducto(Integer id) {
+    ropaRepository.eliminarRopaByIDProducto(id);
+}
 
 }
