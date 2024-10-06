@@ -15,7 +15,7 @@ public class Ropa {
 
     @Id
     private ObjectId _id;
-    
+
     @Field(name = "id")
     private Integer productId;
     private String title;
@@ -26,11 +26,36 @@ public class Ropa {
     @Field("rating")
     private Rating rating;
 
+    // Constructor por defecto (necesario para Spring Data y MongoDB)
+    public Ropa() {
+    }
+
+    // Constructor con todos los campos
+    public Ropa(ObjectId _id, Integer productId, String title, Double price, String description, String category, String image, Rating rating) {
+        this._id = _id;
+        this.productId = productId;
+        this.title = title;
+        this.price = price;
+        this.description = description;
+        this.category = category;
+        this.image = image;
+        this.rating = rating;
+    }
 
     @Getter
     @Setter
-    class Rating {
+    public static class Rating {
         private Double rate;
         private Integer count;
+
+        // Constructor por defecto (necesario para Spring Data y MongoDB)
+        public Rating() {
+        }
+
+        // Constructor con todos los campos
+        public Rating(Double rate, Integer count) {
+            this.rate = rate;
+            this.count = count;
+        }
     }
 }
