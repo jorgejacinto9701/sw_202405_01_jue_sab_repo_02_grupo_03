@@ -1,0 +1,7 @@
+1.-Serivicio Rest para busqueda con 2 campos en el filtro:
+
+http://localhost:8095/url/pelicula/listaporPaisOGenero/China/Western
+
+2.-Servicio Rest para busqueda de pelicula entre años (investigación)
+
+http://localhost:8095/url/pelicula/buscarPeliculaEntreAnos/2000/20015
