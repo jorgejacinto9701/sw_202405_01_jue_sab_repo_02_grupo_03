@@ -1,0 +1,11 @@
+CASO 1
+http://localhost:8095/url/bogota/listarPorIdYNombre?id=3499&nombre=Parque%20Cedro%20Golf%20Club
+
+CASO 2
+http://localhost:8095/url/bogota/listarPorRangoDeLatitud?minLatitud=3.5&maxLatitud=4.4
+
+CASO 3
+http://localhost:8095/url/bogota/iconografia?iconografia=parque
+
+CASO 4
+http://localhost:8095/url/bogota/buscarPorIdOTelefono?objectId=63&telefono=5713411470
