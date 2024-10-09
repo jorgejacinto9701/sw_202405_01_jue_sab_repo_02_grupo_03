@@ -1,0 +1,5 @@
+CASO 01
+- http://localhost:8095/url/pais/listaporPaisPopularidada/Europe/20000
+
+CASO 02
+- http://localhost:8095/url/pais/listaInPorArea/83871,468

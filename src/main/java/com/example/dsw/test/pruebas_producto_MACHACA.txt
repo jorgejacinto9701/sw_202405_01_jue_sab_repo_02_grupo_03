@@ -1,0 +1,13 @@
+/*PRUEBAS*/
+http://localhost:8095/url/producto/listaProductos
+
+/*CASO 1*/
+--CON "$or"
+http://localhost:8095/url/producto/listaProductoPor/9999108200050001/Bundle
+
+--CON "$and"
+http://localhost:8095/url/producto/listaProductosAnd/Bundle/1,520-Disc Library-Style Media Shelf - Black
+
+/*CASO 2*/
+--funcion con MAX Y MIN ("$gte" y "$lte")
+http://localhost:8095/url/producto/listaProductosPorPrecio/590/600
