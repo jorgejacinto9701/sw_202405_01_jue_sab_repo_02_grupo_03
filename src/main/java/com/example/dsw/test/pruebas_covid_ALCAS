@@ -1,0 +1,11 @@
+CASO 1
+http://localhost:8095/url/covid/listaPorCountry/Argentina
+
+CASO 2
+http://localhost:8095/url/covid/listaMayorDeaths/800
+
+CASO 3
+http://localhost:8095/url/covid/listaPorMesOAño/09/2022
+
+CASO 4
+http://localhost:8095/url/covid/listaPorDiaYAño/30/2020
