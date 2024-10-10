@@ -1,0 +1,11 @@
+CASO 1:
+http://localhost:8095/url/empleado/buscarPorNombre/Josefina
+
+CASO 2:
+http://localhost:8095/url/empleado/buscarPorGeneroEdad/male/true
+
+CASO 3:
+http://localhost:8095/url/empleado/entreEdad/25/35
+
+CASO 4:
+http://localhost:8095/url/empleado/listarCompaniaItem/Mantro/cherry
