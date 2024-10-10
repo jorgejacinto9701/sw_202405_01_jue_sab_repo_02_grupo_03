@@ -43,12 +43,12 @@ public class CovidController {
 
     @GetMapping("/listaPorMesPais/{month}/{countryterritoryCode}")
     public List<Covid> listaPorMesPais(@PathVariable String month,@PathVariable String countryterritoryCode){
-        return service.listaPorMesPais(month, countryterritoryCode);
+        return covidService.listaPorMesPais(month, countryterritoryCode);
     }
 
     @DeleteMapping("/eliminaPorMuertesPais/{deaths}/{countryterritoryCode}")
     public void eliminaPorMuertesPais(@PathVariable Integer deaths,@PathVariable String countryterritoryCode){
-        service.eliminaPorMuertesPais(deaths, countryterritoryCode);
+        covidService.eliminaPorMuertesPais(deaths, countryterritoryCode);
     }
 
 }
