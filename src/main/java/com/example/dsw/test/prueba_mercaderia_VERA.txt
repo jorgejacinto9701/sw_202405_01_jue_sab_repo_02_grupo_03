@@ -1,0 +1,8 @@
+CASO 1:
+http://localhost:8095/url/mercaderia/listaPorSkuName/26481156/Let
+
+CASO 2:
+http://localhost:8095/url/mercaderia/listaPorTypeExcluido/Music
+
+CASO 2 (otra función):
+http://localhost:8095/url/mercaderia/listaPorRangoPrecios/10/20
