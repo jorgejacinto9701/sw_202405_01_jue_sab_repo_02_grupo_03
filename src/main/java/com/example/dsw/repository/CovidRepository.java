@@ -23,4 +23,10 @@ public interface CovidRepository  extends MongoRepository<Covid, ObjectId> {
 	@Query("{ $and: [{day: ?0}, {year: ?1}] }") 
     public List<Covid> listaPorDíaYAño(String day, String year);
 
+    @Query("{ $and:[{month:?0},{countryterritoryCode:?1}]}")
+    public List<Covid> listaPorMesPais(String month,String countryterritoryCode);
+
+    @Query(value = "{ $and: [ { 'deaths': { $lt: ?0 } }, { 'countryterritoryCode': ?1 } ] }", delete = true)
+    public void eliminaPorMuertesPais(Integer deaths, String countryterritoryCode);
+
 }

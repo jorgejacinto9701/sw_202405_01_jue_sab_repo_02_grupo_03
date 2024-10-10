@@ -1,0 +1,7 @@
+1. Servicio rest usando el campo mes y codeterritory 
+
+http://localhost:8095/url/covid/listaPorMesPais/12/AFG
+
+2.Servicio rest para eliminar las colecciones con cifra de muertos menores al parametro ingresado y del codigo de pais de parametro ingresado
+
+http://localhost:8095/url/covid/eliminaPorMuertesPais/10/AFG

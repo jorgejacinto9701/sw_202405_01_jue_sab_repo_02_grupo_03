@@ -33,6 +33,18 @@ public class CovidServiceImpl implements CovidService {
     public List<Covid> listaPorDíaYAño(String day, String year) {
         return covidRepository.listaPorMesOAño(day, year);
     }
-    
+
+    @Autowired
+    private CovidRepository repository;
+
+    @Override
+    public List<Covid> listaPorMesPais(String month,String countryterritoryCode){
+        return repository.listaPorMesPais(month, countryterritoryCode);
+    }
+
+    @Override
+    public void eliminaPorMuertesPais(Integer deaths, String countryterritoryCode){
+        repository.eliminaPorMuertesPais(deaths, countryterritoryCode);
+    }
 
 }
