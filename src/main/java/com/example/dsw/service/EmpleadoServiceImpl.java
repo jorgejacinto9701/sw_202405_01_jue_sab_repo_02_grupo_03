@@ -3,7 +3,6 @@ package com.example.dsw.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Service;
 
 import com.example.dsw.entity.Empleado;
