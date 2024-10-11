@@ -14,6 +14,8 @@ public class BogotaServiceImpl  implements BogotaService {
      @Autowired
     private BogotaRepository bogotaRepository;
 
+    //SIERRA TORRES, PLABLO ABRIEL
+
     @Override
     public List<Bogota> listarPorIdYNombre(Integer id, String nombre) {
         return bogotaRepository.listarPorIdYNombre(id, nombre);
@@ -35,12 +37,26 @@ public class BogotaServiceImpl  implements BogotaService {
     }
 
     
+    //CHIRA MARTINEZ, JHONATAN
 
+    @Override
+	public List<Bogota> listaPorCorreoIsNullAndTelefonoIsCero() {
+		return bogotaRepository.listaPorCorreoIsNullAndTelefonoIsCero();
+	}
 
+    @Override
+	public List<Bogota> listaPorNombreOLongitud(String nombre, Double longitud) {
+		return bogotaRepository.listaPorNombreOLongitud(nombre, longitud);
+	}
 
+    @Override
+	public List<Bogota> listaPorDireccionOTelefono(String direccion, String telefono) {
+		return bogotaRepository.listaPorDireccionOTelefono(direccion, telefono);
+	}
 
-
-
-
+    @Override
+	public List<Bogota> buscarLatitudMayorQueYLongitudMenorQue(Double latitud, Double longitud) {
+		return bogotaRepository.buscarLatitudMayorQueYLongitudMenorQue(latitud, longitud);
+	}
 
 }

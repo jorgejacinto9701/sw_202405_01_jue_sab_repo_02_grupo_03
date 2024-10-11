@@ -1,0 +1,11 @@
+CASO 1: And
+http://localhost:8095/url/bogota/listaPorCorreoIsNullAndTelefonoIsCero
+
+CASO 2: Or
+http://localhost:8095/url/bogota/listaPorNombreOLongitud?nombre=Vitrina%20Turística%20ANATO&longitud=-74.082292
+
+CASO 3: Or y regex
+http://localhost:8095/url/bogota/listaPorDireccionOTelefono?direccion=Avenida%20calle%2026&telefono=5713616
+
+CASO 4: gt y lt
+http://localhost:8095/url/bogota/buscarPorLatitudYLongitud?latitud=4.724819&longitud=-74.111399

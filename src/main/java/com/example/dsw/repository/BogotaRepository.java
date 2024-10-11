@@ -10,6 +10,7 @@ import com.example.dsw.entity.Bogota;
 
 public interface BogotaRepository  extends MongoRepository<Bogota, ObjectId> {
 
+    //SIERRA TORRES, PLABLO ABRIEL
 
     @Query("{ $and: [{ 'id': ?0 }, { 'nombre': ?1 }] }")
     public List<Bogota> listarPorIdYNombre(Integer id, String nombre);
@@ -24,5 +25,18 @@ public interface BogotaRepository  extends MongoRepository<Bogota, ObjectId> {
     public List<Bogota> listarPorIdOTelefono(Integer objectId, String telefono);
 
 
+    //CHIRA MARTINEZ, JHONATAN
+
+    @Query("{ $and: [ {correo: null }, {telefono: '0' } ] }")
+	public List<Bogota> listaPorCorreoIsNullAndTelefonoIsCero();
+
+    @Query("{ $or: [{nombre: ?0}, {longitud: ?1}] }")
+	public List<Bogota> listaPorNombreOLongitud(String nombre, Double longitud);
+
+    @Query("{ $or: [ { 'direccion' : { $regex: ?0 } }, { 'telefono' : { $regex: ?1 } } ] }")
+    public List<Bogota> listaPorDireccionOTelefono(String direccion, String telefono);
+
+    @Query("{ latitud: { $gt: ?0 }, longitud: { $lt: ?1 } }")
+    public List<Bogota> buscarLatitudMayorQueYLongitudMenorQue(Double latitud, Double longitud);
 
 }
