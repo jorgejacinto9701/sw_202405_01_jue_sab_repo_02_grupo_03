@@ -27,7 +27,7 @@ private RestTemplate restTemplate;
 
     @GetMapping("/listaPorIDProducto_o_Precio/{id}/{price}")
     public List<Ropa> listaPorIDProductooPrecio(@PathVariable Integer id, @PathVariable double price) {
-        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Covid-listaPorIDProducto_o_Precio", null, String.class);        
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Ropa-listaPorIDProducto_o_Precio", null, String.class);        
         return ropaService.listaPorIDProductooPrecio(id, price);
     }
     @GetMapping("/test")
@@ -37,7 +37,7 @@ public String testEndpoint() {
 
  @DeleteMapping("/eliminarRopaByIDProducto/{id}")
     public ResponseEntity<String> eliminarRopa(@PathVariable Integer id) {
-        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Covid-eliminarRopa", null, String.class);        
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Ropa-eliminarRopa", null, String.class);        
         ropaService.eliminarRopaByIDProducto(id);
         return ResponseEntity.ok("Ropa eliminada con éxito");
     }
