@@ -2,11 +2,13 @@ package com.example.dsw.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.dsw.entity.Bogota;
 import com.example.dsw.service.BogotaService;
@@ -15,6 +17,10 @@ import com.example.dsw.service.BogotaService;
 @RequestMapping("/url/bogota")
 public class BogotaController {
 
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Autowired
      private  BogotaService bogotaService;
 
     //SIERRA TORRES, PLABLO ABRIEL
@@ -49,21 +55,25 @@ public class BogotaController {
 
     @GetMapping("/listaPorCorreoIsNullAndTelefonoIsCero")
 	public List<Bogota> listaPorCorreoIsNullAndTelefonoIsCero() {
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Bogota-listaPorCorreoIsNullAndTelefonoIsCero", null, String.class);
 		return bogotaService.listaPorCorreoIsNullAndTelefonoIsCero();
 	}
 
     @GetMapping("/listaPorNombreOLongitud")
 	public List<Bogota> listaPorNombreOLongitud(@RequestParam String nombre, @RequestParam Double longitud) {
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Bogota-listaPorNombreOLongitud", null, String.class);
 		return bogotaService.listaPorNombreOLongitud(nombre, longitud);
 	}
 
     @GetMapping("/listaPorDireccionOTelefono")
 	public List<Bogota> listaPorDireccionOTelefono(@RequestParam String direccion, @RequestParam String telefono) {
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Bogota-listaPorDireccionOTelefono", null, String.class);
 		return bogotaService.listaPorDireccionOTelefono(direccion, telefono);
 	}
 
     @GetMapping("/buscarPorLatitudYLongitud")
     public List<Bogota> buscarLatitudMayorQueYLongitudMenorQue(@RequestParam Double latitud, @RequestParam Double longitud) {
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Bogota-buscarPorLatitudYLongitud", null, String.class);
     return bogotaService.buscarLatitudMayorQueYLongitudMenorQue(latitud, longitud);
     }
      
