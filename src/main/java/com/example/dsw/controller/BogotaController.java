@@ -31,23 +31,27 @@ public class BogotaController {
 
     @GetMapping("/listarPorIdYNombre/{id}/{nombre}")
      public List<Bogota> listarPorIdYNombre(@PathVariable Integer id, @PathVariable String nombre) {
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Bogota-listarPorIdYNombre", null, String.class);
         return bogotaService.listarPorIdYNombre(id, nombre);
     }
 
 
     @GetMapping("/listarPorRangoDeLatitud/{minLatitud}/{maxLatitud}")
      public List<Bogota>listarPorRangoDeLatitud(@PathVariable double minLatitud,@PathVariable double maxLatitud) {
-         return bogotaService.listarPorRangoDeLatitud(minLatitud,maxLatitud);
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Bogota-listarPorRangoDeLatitud", null, String.class);
+        return bogotaService.listarPorRangoDeLatitud(minLatitud,maxLatitud);
      }
 
      @GetMapping("/iconografia/{iconografia}")
      public List<Bogota> buscarPorIconografia(@PathVariable String iconografia) {
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Bogota-buscarPorIconografia", null, String.class);
         return bogotaService.buscarPorIconografia(iconografia);
     }
 
     @GetMapping("/buscarPorIdOTelefono/{objectId}/{telefono}")
-    public List<Bogota> buscarPorIdOTelefono(@PathVariable Integer objectId, @PathVariable String telefono) {
-    return bogotaService.listarPorIdOTelefono(objectId, telefono);
+        public List<Bogota> buscarPorIdOTelefono(@PathVariable Integer objectId, @PathVariable String telefono) {
+        return bogotaService.listarPorIdOTelefono(objectId, telefono);
+
     }
 
     
