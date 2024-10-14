@@ -26,11 +26,13 @@ public class ProductoController {
 
     @GetMapping("/listaProductos")
     public List<Producto> listaTodos() {
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Producto-listaProductos", null, String.class);
         return productoService.listAllProductos();
     }
 
     @GetMapping("/listaProductoPor/{sku}/{type}")
     public List<Producto> listaProductosPorSku(@PathVariable Long sku, @PathVariable String type ){
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Producto-listaProductoPor", null, String.class);
         return productoService.listProductosBySku(sku, type);
     }
 
@@ -43,6 +45,7 @@ public class ProductoController {
 
     @GetMapping("/listaProductosPorPrecio/{minPrecio}/{maxPrice}")
     public List<Producto> listProductosPorPrecio(@PathVariable Double minPrecio, @PathVariable Double maxPrice){
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Producto-listaProductosPorPrecio", null, String.class);
         return productoService.listProductosPorPrecio(minPrecio, maxPrice);
     }
 }
