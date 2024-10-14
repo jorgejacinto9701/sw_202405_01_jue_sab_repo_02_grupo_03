@@ -17,9 +17,6 @@ import com.example.dsw.service.BogotaService;
 @RequestMapping("/url/bogota")
 public class BogotaController {
 
-    @Autowired
-    private RestTemplate restTemplate;
-
      private  BogotaService bogotaService;
 
     //SIERRA TORRES, PLABLO ABRIEL
