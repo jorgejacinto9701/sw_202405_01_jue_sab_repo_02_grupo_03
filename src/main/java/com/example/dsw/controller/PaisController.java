@@ -25,10 +25,10 @@ public class PaisController {
     // public List<Pais> listaporPaisPopularidada(@PathVariable String region, @PathVariable Long population) {
     //     return paisService.listaporPaisPopularidada(region, population);
     // }
-    @GetMapping("/listaInPorArea/{area}")
-    public List<Pais> listaInPorArea(@PathVariable List<Double> area) {
-        return paisService.listaInPorArea(area);
-    }
+    // @GetMapping("/listaInPorArea/{area}")
+    // public List<Pais> listaInPorArea(@PathVariable List<Double> area) {
+    //     return paisService.listaInPorArea(area);
+    // }
 
 
     @GetMapping("/listaporPaisPopularidada/{region}/{population}")
@@ -36,9 +36,10 @@ public class PaisController {
         restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Pais-listaporPaisPopularidada", null, String.class);        
         return paisService.listaporPaisPopularidada(region, population);
     }
-    @GetMapping("/test")
-    public String testEndpoint() {
-        return "Endpoint is working!";
+    @GetMapping("/listaInPorArea/{area}")
+    public List<Pais> listaInPorArea(@PathVariable List<Double> area) {
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Pais-listaInPorArea", null, String.class);        
+        return paisService.listaInPorArea(area);
     }
 
 }
