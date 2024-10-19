@@ -12,9 +12,11 @@ public class DswApplication {
 		SpringApplication.run(DswApplication.class, args);
 	}
 
-	@Bean
-		public RestTemplate restTemplate() {
-		return new RestTemplate();
+
+@Bean
+public RestTemplate restTemplate() {
+	return new RestTemplate();
+
 }
 
 }
