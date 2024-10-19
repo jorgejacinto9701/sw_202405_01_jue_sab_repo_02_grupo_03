@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.dsw.entity.Covid;
 import com.example.dsw.service.CovidService;
@@ -17,39 +18,47 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RestController
 @RequestMapping("/url/covid")
 public class CovidController {
+
+    @Autowired
+    private RestTemplate restTemplate;
     
     @Autowired
     private CovidService covidService;
 
     @GetMapping("/buscarPorCountry/{country}")
 	    public List<Covid> buscarPorCountry(@PathVariable  String country) {
+            restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Covid-buscarPorCountry", null, String.class);
 	        return covidService.buscarPorCountry(country);
 	    }
 
     @GetMapping("/listaMayorDeaths/{deaths}")
 	    public List<Covid> listaMayorDeaths(@PathVariable Integer deaths) {
+            restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Covid-listaMayorDeaths", null, String.class);
 	        return covidService.listaMayorDeaths(deaths);
 	}
 
     @GetMapping("/listaPorMesOAño/{month}/{year}")
         public List<Covid> listaPorMesOAño(@PathVariable String month, @PathVariable String year) {
+            restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Covid-listaPorMesOAño", null, String.class);
         return covidService.listaPorMesOAño(month, year);
     }
 
     @GetMapping("/listaPorDiaYAño/{day}/{year}")
         public List<Covid> listaPorDiaYAño(@PathVariable String day, @PathVariable String year) {
+            restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Covid-listaPorDiaYAño", null, String.class);
         return covidService.listaPorDíaYAño(day, year);
     }
 
     @GetMapping("/listaPorMesPais/{month}/{countryterritoryCode}")
     public List<Covid> listaPorMesPais(@PathVariable String month,@PathVariable String countryterritoryCode){
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Covid-listaPorMesPais", null, String.class);
         return covidService.listaPorMesPais(month, countryterritoryCode);
     }
 
     @DeleteMapping("/eliminaPorMuertesPais/{deaths}/{countryterritoryCode}")
     public void eliminaPorMuertesPais(@PathVariable Integer deaths,@PathVariable String countryterritoryCode){
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Covid-eliminaPorMuertesPais", null, String.class);
         covidService.eliminaPorMuertesPais(deaths, countryterritoryCode);
     }
 
 }
-
