@@ -21,14 +21,14 @@ public class PaisController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("/listaporPaisPopularidada/{region}/{population}")
-    public List<Pais> listaporPaisPopularidadat3(@PathVariable String region, @PathVariable Long population) {
-        return paisService.listaporPaisPopularidada(region, population);
-    }
-    @GetMapping("/listaInPorArea/{area}")
-    public List<Pais> listaInPorAreaT3(@PathVariable List<Double> area) {
-        return paisService.listaInPorArea(area);
-    }
+    // @GetMapping("/listaporPaisPopularidada/{region}/{population}")
+    // public List<Pais> listaporPaisPopularidadat3(@PathVariable String region, @PathVariable Long population) {
+    //     return paisService.listaporPaisPopularidada(region, population);
+    // }
+    // @GetMapping("/listaInPorArea/{area}")
+    // public List<Pais> listaInPorAreaT3(@PathVariable List<Double> area) {
+    //     return paisService.listaInPorArea(area);
+    // }
 
 
     @GetMapping("/listaporPaisPopularidada/{region}/{population}")
