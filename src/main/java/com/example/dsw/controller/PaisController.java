@@ -21,23 +21,23 @@ public class PaisController {
     @Autowired
     private RestTemplate restTemplate;
 
-    // @GetMapping("/listaporPaisPopularidada/{region}/{population}")
-    // public List<Pais> listaporPaisPopularidada(@PathVariable String region, @PathVariable Long population) {
-    //     return paisService.listaporPaisPopularidada(region, population);
-    // }
-    // @GetMapping("/listaInPorArea/{area}")
-    // public List<Pais> listaInPorArea(@PathVariable List<Double> area) {
-    //     return paisService.listaInPorArea(area);
-    // }
+    @GetMapping("/listaporPaisPopularidada/{region}/{population}")
+    public List<Pais> listaporPaisPopularidadat3(@PathVariable String region, @PathVariable Long population) {
+        return paisService.listaporPaisPopularidada(region, population);
+    }
+    @GetMapping("/listaInPorArea/{area}")
+    public List<Pais> listaInPorAreaT3(@PathVariable List<Double> area) {
+        return paisService.listaInPorArea(area);
+    }
 
 
     @GetMapping("/listaporPaisPopularidada/{region}/{population}")
-    public List<Pais> listaPorIDProductooPrecio(@PathVariable String region, @PathVariable Long population) {
+    public List<Pais> listaporPaisPopularidadaEF(@PathVariable String region, @PathVariable Long population) {
         restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Pais-listaporPaisPopularidada", null, String.class);        
         return paisService.listaporPaisPopularidada(region, population);
     }
     @GetMapping("/listaInPorArea/{area}")
-    public List<Pais> listaInPorArea(@PathVariable List<Double> area) {
+    public List<Pais> listaInPorAreaEF(@PathVariable List<Double> area) {
         restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Pais-listaInPorArea", null, String.class);        
         return paisService.listaInPorArea(area);
     }
