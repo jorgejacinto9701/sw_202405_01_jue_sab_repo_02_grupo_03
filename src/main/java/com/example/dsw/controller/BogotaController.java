@@ -50,6 +50,7 @@ public class BogotaController {
 
     @GetMapping("/buscarPorIdOTelefono/{objectId}/{telefono}")
         public List<Bogota> buscarPorIdOTelefono(@PathVariable Integer objectId, @PathVariable String telefono) {
+        restTemplate.postForObject("http://localhost:8097/url/auditoria/registrar/MONGODB-Examen-Bogota-buscarPorIdOTelefono", null, String.class);
         return bogotaService.listarPorIdOTelefono(objectId, telefono);
 
     }
